@@ -1,0 +1,70 @@
+:root {
+  --accent: #ff6b9d;
+  --accent-dark: #c44569;
+  --dark: #2c1e26;
+  --dark-2: #41303c;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Lora', serif;
+  padding-top: 70px;
+  scroll-behavior: smooth;
+  background-color: #fff9fb;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* ===== DARK SECTIONS → WHITE TEXT ===== */
+.hero, .page-header, .footer, #mainNav {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+  color: #ffffff !important;
+}
+.hero *, .page-header * { color: #ffffff !important; }
+
+/* ===== LIGHT SECTIONS → DARK TEXT ===== */
+section { background-color: #ffffff; color: #333333 !important; }
+section h1, section h2, section h3, section h4, section h5, section h6 { color: #2c1e26 !important; }
+section p, section .text-muted { color: #555555 !important; }
+
+/* ===== NAVBAR ===== */
+#mainNav { background: rgba(44, 30, 38, 0.97); }
+.navbar-nav .nav-link { color: #ffffff !important; position: relative; margin: 0 8px; }
+.navbar-nav .nav-link::after {
+  content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px;
+  background: var(--accent); transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
+
+/* ===== BUTTONS & ACCENT ===== */
+.text-accent { color: var(--accent) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.btn-accent {
+  background-color: var(--accent); border-color: var(--accent); color: #ffffff !important;
+  padding: 10px 24px; border-radius: 8px; transition: 0.3s ease;
+}
+.btn-accent:hover { background-color: var(--accent-dark); border-color: var(--accent-dark); color: #ffffff !important; transform: translateY(-2px); }
+
+/* ===== CARDS ===== */
+.feature-card, .card, .project-card {
+  background: #ffffff; border-radius: 14px; box-shadow: 0 4px 15px rgba(255,107,157,0.08);
+  transition: transform 0.3s ease;
+}
+.feature-card:hover, .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(255,107,157,0.15); }
+
+/* ===== FOOTER ===== */
+.footer { margin-top: 40px; }
+.footer a { color: #ffffff !important; }
+.footer a:hover i { color: var(--accent) !important; }
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+  position: fixed; bottom: 25px; right: 25px;
+  border-radius: 50%; width: 45px; height: 45px;
+  background: var(--accent); border: none; color: #fff;
+}
